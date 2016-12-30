@@ -1,0 +1,6 @@
+__pycache__
+tmp/
+settings.json
+projectq/settings.json
+build/
+*.egg-info
