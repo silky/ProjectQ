@@ -73,7 +73,7 @@ class DaggeredGate(BasicGate):
 
 		try:
 			# Hermitian conjugate is inverse matrix
-			self.matrix = gate.matrix.getH()
+			self._matrix = gate.matrix.getH()
 		except AttributeError:
 			pass
 
