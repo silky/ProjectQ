@@ -76,6 +76,19 @@ class XGate(SelfInverseGate):
 X = NOT = XGate()
 
 
+# TODO: Clean this up. See https://github/silk/ProjectQ/issues/2
+class NegXGate(SelfInverseGate):
+        """ Neg-X gate class """
+        def __init__(self):
+                super(NegXGate, self).__init__()
+                self._matrix = -np.matrix([[0, 1], [1, 0]])
+
+        def __str__(self):
+                return "-X"
+
+NegX = NegXGate()
+
+
 class YGate(SelfInverseGate):
         """ Pauli-Y gate class """
         def __init__(self):

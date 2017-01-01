@@ -31,6 +31,7 @@ needs to be made explicitely, while for one argument it is optional.
 
 from copy import deepcopy
 import math
+import numpy as np
 
 from projectq.types import BasicQubit
 from ._command import Command, apply_command
@@ -202,15 +203,12 @@ class BasicGate(object):
                 apply_command(cmd)
 
         def __eq__(self, other):
-                """ Return True if equal (i.e., instance of same class). """
+                """ Return True if they are the same class. """
                 return isinstance(other, self.__class__)
+
 
         def __ne__(self, other):
                 return not self.__eq__(other)
-
-        def __neg__(self):
-                self._matrix = -self._matrix
-                return self
 
 
 class SelfInverseGate(BasicGate):
